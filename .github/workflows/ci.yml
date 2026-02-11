@@ -29,4 +29,4 @@ jobs:
           git config user.email "actions@github.com"
           git add k8s/deployment.yml
           git commit -m "Update image to ${{ github.sha }}"
-          git push
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
