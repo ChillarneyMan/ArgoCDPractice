@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
       - name: hello-app
-        image: chillarneyman/hello-app:latest
+        image: chillarneyman/hello-app:ce0fa8d7eef0e7fd430d2e8195145d67004cd5bb
