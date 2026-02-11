@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gnomeai-flask
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    # Your GitHub repo
+    repoURL: https://github.com/ChillarneyMan/ArgoCDPractice
+    targetRevision: main
+    # Watch only the k8s/ folder
+    path: k8s
+
+  destination:
+    # Deploy to local Minikube cluster
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      # Auto-deploy when Git changes
+      selfHeal: true
+      prune: true
